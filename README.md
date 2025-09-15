@@ -1,4 +1,33 @@
 ## Requirements
+# VPC Terraform Module
+
+This Terraform module provisions a **basic AWS VPC** setup with:
+- A VPC with DNS support enabled
+- Public Subnet
+- Internet Gateway
+- Route Table and association
+- Default Security Group (SSH + ICMP allowed from admin IP)
+- VPC Flow Logs to CloudWatch
+
+---
+
+## 📦 Usage
+
+```hcl
+module "vpc" {
+  source = "github.com/Lavanya2090/vpc-module" # Or relative path: ./vpc-module
+
+  aws_region         = "ap-south-1"
+  project            = "demo-vpc"
+  vpc_cidr           = "10.1.0.0/16"
+  public_subnet_cidr = "10.1.1.0/24"
+  az                 = "ap-south-1b"
+  environment        = "staging"
+  owner              = "lavanya"
+  admin_ip           = "203.0.113.25/32"
+}
+
+
 
 | Name | Version |
 |------|---------|
