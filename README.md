@@ -11,9 +11,21 @@ This Terraform module provisions a **basic AWS VPC** setup with:
 
 ---
 
+# VPC Terraform Module
+
+This Terraform module provisions a **basic AWS VPC** setup with:
+- A VPC with DNS support enabled
+- Public Subnet
+- Internet Gateway
+- Route Table and association
+- Default Security Group (SSH + ICMP allowed from admin IP)
+- VPC Flow Logs to CloudWatch
+
+---
+
 ## 📦 Usage
 
-
+```hcl
 module "vpc" {
   source = "github.com/Lavanya2090/vpc-module" # Or relative path: ./vpc-module
 
@@ -26,8 +38,6 @@ module "vpc" {
   owner              = "lavanya"
   admin_ip           = "203.0.113.25/32"
 }
-
----
 
 | Name | Version |
 |------|---------|
