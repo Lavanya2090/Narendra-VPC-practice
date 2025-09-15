@@ -13,7 +13,7 @@ This Terraform module provisions a **basic AWS VPC** setup with:
 
 ## 📦 Usage
 
-```hcl
+
 module "vpc" {
   source = "github.com/Lavanya2090/vpc-module" # Or relative path: ./vpc-module
 
@@ -27,7 +27,7 @@ module "vpc" {
   admin_ip           = "203.0.113.25/32"
 }
 
-
+---
 
 | Name | Version |
 |------|---------|
